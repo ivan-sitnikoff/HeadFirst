@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from vsearch import search4letters
 
@@ -11,5 +11,10 @@ def hello() -> str:
 @app.route('/search')
 def do_search() -> str:
     return str(search4letters('life, universe and everything', 'eiru,l'))    
+
+@app.route('/entry')
+def entry_page():
+    return render_template('entry.html', 
+                           the_title='Welcome to search4letter on the web!')
 
 app.run()
