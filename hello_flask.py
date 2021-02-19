@@ -17,4 +17,4 @@ def entry_page():
     return render_template('entry.html', 
                            the_title='Welcome to search4letter on the web!')
 
-app.run()
+app.run(debug=True)
